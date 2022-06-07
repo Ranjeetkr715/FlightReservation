@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface FlightRepository extends JpaRepository<Flight, Long> {
 
-  @Query("from Flight where departureCity=:departureCity and ArrivalCity=:ArrivalCity and dateOfDeparture=:departureDate")
+  @Query("from Flight where departureCity=:departureCity and ArrivalCity=:ArrivalCity and dateOfDeparture=:dateOfDeparture")
   List<Flight> findFlights(@Param("departureCity") String from, @Param("ArrivalCity") String to, @Param("dateOfDeparture") Date departureDate);
 
 }
